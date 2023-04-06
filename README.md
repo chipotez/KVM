@@ -39,6 +39,28 @@ Reinicia el servicio de red mediante el siguiente comando:
 
 Ahora, tu sistema RHEL 8 tendrá una configuración de red completa y actualizada. Recuerda que estos valores dependerán de la red a la que te conectes y debes ajustarlos a tu caso específico.
 
+Para establecer una dirección IP estática, usaremos las siguientes líneas:
+ 
+Para establecer la dirección IP en la interfaz deseada ejecutamos
+nmcli con mod eth0 ipv4.addresses 192.168.0.16/24
+
+Para establecer el Gateway
+nmcli con mod eth0 ipv4.gateway 192.168.0.1
+
+Para establecer el método como manual (estático) y no DHCP
+nmcli con mod eth0 ipv4.method manual
+
+Para configurar el DNS
+nmcli con mod eth0 ipv4.dns "8.8.8.8"
+
+Paso 2
+Luego de realizar este proceso, aplicaremos los cambios ejecutando:
+nmcli con up eth0
+
+Paso 3
+Todos los cambios se almacenarán en la ruta /etc/sysconfig/network-scripts / ifcfg- (Interfaz), podemos comprobarlo ejecutando:
+cat /etc/sysconfig/network-scripts/ifcfg-eth0
+
 
 # Para crear un snapshot en KVM, sigue estos pasos:
 
