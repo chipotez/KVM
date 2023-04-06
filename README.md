@@ -1,3 +1,30 @@
+# Configuraci'on de IP estatica
+
+<pre>[root@app network-scripts]# vi /etc/sysconfig/network-scripts/ifcfg-enp1s0
+TYPE=&quot;Ethernet&quot;
+BOOTPROTO=&quot;none&quot;# (puede ser dhcp o none si quieres asignar una dirección IP estática)
+DEFROUTE=&quot;yes&quot;
+PEERDNS=&quot;yes&quot;
+PEERROUTES=&quot;yes&quot;
+IPV4_FAILURE_FATAL=&quot;no&quot;
+IPV6INIT=&quot;yes&quot;
+IPV6_AUTOCONF=&quot;yes&quot;
+IPV6_DEFROUTE=&quot;yes&quot;
+IPV6_PEERDNS=&quot;yes&quot;
+IPV6_PEERROUTES=&quot;yes&quot;
+IPV6_FAILURE_FATAL=&quot;no&quot;
+NAME=&quot;ifcfg-enp1s0&quot;
+DEVICE=&quot;ifcfg-enp1s0&quot;
+ONBOOT=&quot;yes&quot;
+USERCTL=&quot;no&quot;
+IPADDR=192.168.124.10 #(aquí debes colocar la dirección IP estática que deseas asignar si usas &quot;none&quot; en BOOTPROTO)
+NETMASK=255.255.255.0 #(aquí debes colocar la máscara de red correspondiente a tu red si usas &quot;none&quot; en BOOTPROTO)
+GATEWAY=192.168.1.1 #(aquí debes colocar la dirección IP de la puerta de enlace de tu red si usas &quot;none&quot; en BOOTPROTO)
+DNS1=8.8.8.8 #(aquí debes colocar la dirección IP de tu servidor DNS primario)
+DNS2=8.8.4.4 #(aquí debes colocar la dirección IP de tu servidor DNS secundario)
+</pre>
+
+
 # Para crear un snapshot en KVM, sigue estos pasos:
 
 1. Abre el hipervisor KVM y accede a la máquina virtual (VM) que deseas tomar el snapshot.
