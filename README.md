@@ -26,7 +26,7 @@ ONBOOT=&quot;yes&quot;
 USERCTL=&quot;no&quot;
 IPADDR=192.168.124.10 #(aquí debes colocar la dirección IP estática que deseas asignar si usas &quot;none&quot; en BOOTPROTO)
 NETMASK=255.255.255.0 #(aquí debes colocar la máscara de red correspondiente a tu red si usas &quot;none&quot; en BOOTPROTO)
-GATEWAY=192.168.1.1 #(aquí debes colocar la dirección IP de la puerta de enlace de tu red si usas &quot;none&quot; en BOOTPROTO)
+GATEWAY=192.168.124.1 #(aquí debes colocar la dirección IP de la puerta de enlace de tu red si usas &quot;none&quot; en BOOTPROTO)
 DNS1=8.8.8.8 #(aquí debes colocar la dirección IP de tu servidor DNS primario)
 DNS2=8.8.4.4 #(aquí debes colocar la dirección IP de tu servidor DNS secundario)
 </pre>
