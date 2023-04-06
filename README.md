@@ -1,6 +1,13 @@
 # Configuraci'on de IP estatica
+Para crear un archivo de configuración de red completo en RHEL 8, sigue los siguientes pasos:
 
-<pre>[root@app network-scripts]# vi /etc/sysconfig/network-scripts/ifcfg-enp1s0
+Abre una terminal y accede como usuario root.
+
+Crea un nuevo archivo de configuración de red en el directorio /etc/sysconfig/network-scripts/ con el nombre ifcfg-eth0 (o el nombre correspondiente a tu interfaz de red) usando el editor de texto de tu elección:
+
+
+<pre>
+[root@app network-scripts]# vi /etc/sysconfig/network-scripts/ifcfg-enp1s0
 TYPE=&quot;Ethernet&quot;
 BOOTPROTO=&quot;none&quot;# (puede ser dhcp o none si quieres asignar una dirección IP estática)
 DEFROUTE=&quot;yes&quot;
@@ -23,6 +30,14 @@ GATEWAY=192.168.1.1 #(aquí debes colocar la dirección IP de la puerta de enlac
 DNS1=8.8.8.8 #(aquí debes colocar la dirección IP de tu servidor DNS primario)
 DNS2=8.8.4.4 #(aquí debes colocar la dirección IP de tu servidor DNS secundario)
 </pre>
+
+Guarda los cambios en el archivo y cierra el editor de texto.
+
+Reinicia el servicio de red mediante el siguiente comando:
+
+`systemctl restart network`
+
+Ahora, tu sistema RHEL 8 tendrá una configuración de red completa y actualizada. Recuerda que estos valores dependerán de la red a la que te conectes y debes ajustarlos a tu caso específico.
 
 
 # Para crear un snapshot en KVM, sigue estos pasos:
