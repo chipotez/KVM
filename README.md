@@ -60,6 +60,7 @@ nmcli con up eth0
 Paso 3
 Todos los cambios se almacenarán en la ruta /etc/sysconfig/network-scripts / ifcfg- (Interfaz), podemos comprobarlo ejecutando:
 cat /etc/sysconfig/network-scripts/ifcfg-eth0
+a
 
 
 # Para crear un snapshot en KVM, sigue estos pasos:
